@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
-// 입력한 정수가 19이상이면 성년 아니면 미성년을 출력하는 프로그램
+// 등수를 입력 받아 출력하는 프로그램 (switch 사용)
 public class ExCh3 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("나이를 입력하시오 : ");
-		int age = sc.nextInt();
+		System.out.print("등수를 입력하시오 : ");
+		int grade = sc.nextInt();
 		
-		if (age >= 19)
-			System.out.println("성년");
-		else
-			System.out.println("미성년");
-		
+		switch(grade)
+		{
+			case 1 -> System.out.println("아주 잘했습니다.");
+			case 2, 3 -> System.out.println("잘했습니다.");
+			case 4, 5, 6 -> System.out.println("보통입니다.");
+			default ->  System.out.println("노력해야겠습니다.");
+		}
 	}
 
 }
