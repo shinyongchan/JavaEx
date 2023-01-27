@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
-// 등수를 입력 받아 출력하는 프로그램 (switch 사용)
+// 입력받은 양의 정수 중 짝수만 더하여 출력하는 프로그램
 public class ExCh3 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("등수를 입력하시오 : ");
-		int grade = sc.nextInt();
-		
-		switch(grade)
+		int sum = 0;
+		do
 		{
-			case 1 -> System.out.println("아주 잘했습니다.");
-			case 2, 3 -> System.out.println("잘했습니다.");
-			case 4, 5, 6 -> System.out.println("보통입니다.");
-			default ->  System.out.println("노력해야겠습니다.");
-		}
+			System.out.print("양의 정수를 입력하시오 : ");
+			int num = sc.nextInt();
+			if (num % 2 == 0)
+				sum = sum + num;
+			else if (num <= 0)
+				break;
+		} while (true);
+		System.out.printf("입력한 양의 정수 중에서 짝수의 합은 %d", sum);
 	}
 
 }
