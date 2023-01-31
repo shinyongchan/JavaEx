@@ -1,37 +1,19 @@
-//ch4_ex2
-class Member {
-	private String name, id, pass = null ;
-	private int age = 0 ;
+//ch4_ex3
+class Car {
+	private String color = null ;
+	private static int carcount, redcount = 0;
 	
-	public Member (String name, String id, String pass, int age) {
-		this.age = age;
-		this.id = id;
-		this.pass = pass;
-		this.name = name;
+	public Car (String color) {
+		this.color = color ;
+		carcount = carcount+1;
+		if ("red" == this.color || "RED" == this.color)
+			redcount = redcount +1;
 	}
-	
-	public void setage (int age) {
-		this.age = age ;}
-	public int getage () {
-		return age ; 
+	public static int getNumOfCar() {
+		return carcount ;
 	}
-	
-	public void setname (String name) {
-		this.name = name ;}
-	public String getname () {
-		return name ; 
-	}
-	
-	public void setid (String id) {
-		this.id = id ;}
-	public String getid () {
-		return id ; 
-	}
-	
-	public void setpass (String pass) {
-		this.pass = pass ;}
-	public String getpass () {
-		return pass ; 
+	public static int getNumOfRedCar() {
+		return redcount ;
 	}
 }
 
@@ -41,12 +23,11 @@ public class ExCh4 {
 	
 	public static void main(String[] args) {
 		
-		Member p = new Member("sdafads","abcd","efg",45) ;
-		System.out.printf("이름 : %s\n", p.getname());
-		System.out.printf("아이디 : %s\n", p.getid());
-		System.out.printf("패스워드 : %s\n", p.getpass());
-		System.out.printf("나이 : %d\n", p.getage());
-
+		Car c1 = new Car("red");
+		Car c2 = new Car("blue");
+		Car c3 = new Car("RED");
+		
+		System.out.printf("자동차 수 : %d, 빨간색 자동차 수 : %d",Car.getNumOfCar(), Car.getNumOfRedCar());
 	}
 
 }
