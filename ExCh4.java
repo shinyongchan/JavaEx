@@ -1,20 +1,21 @@
-//ch4_ex3
-class Car {
-	private String color = null ;
-	private static int carcount, redcount = 0;
+//ch4_ex4
+class Line {
+	private int length = 0;
 	
-	public Car (String color) {
-		this.color = color ;
-		carcount = carcount+1;
-		if ("red" == this.color || "RED" == this.color)
-			redcount = redcount +1;
+	public Line (int length) {
+		this.length = length ;
 	}
-	public static int getNumOfCar() {
-		return carcount ;
+	
+	public boolean isSameLine (Line l) {
+		
+		if (l.length == length) 
+			return true ;
+		else 
+			return false ;
+		
 	}
-	public static int getNumOfRedCar() {
-		return redcount ;
-	}
+	
+	
 }
 
 
@@ -23,11 +24,12 @@ public class ExCh4 {
 	
 	public static void main(String[] args) {
 		
-		Car c1 = new Car("red");
-		Car c2 = new Car("blue");
-		Car c3 = new Car("RED");
+		Line a = new Line(1);
+		Line b = new Line(1);
 		
-		System.out.printf("자동차 수 : %d, 빨간색 자동차 수 : %d",Car.getNumOfCar(), Car.getNumOfRedCar());
+		System.out.println(a.isSameLine(b));
+		System.out.println(a==b);
+		
 	}
 
 }
